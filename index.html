@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+    <title>✨ Feliz Cumpleaños Mágico ✨</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- My Style -->
+    <link rel="stylesheet" href="./style/main.css" />
+  </head>
+
+  <body>
+    <!-- Pantalla de Inicio Personalizable -->
+    <div class="start-screen">
+      <div class="start-content">
+        <h1><i class="fas fa-magic"></i> Sorpresa Mágica</h1>
+        <div class="customize-form">
+          <div class="form-group">
+            <label for="userName">Nombre de la persona especial:</label>
+            <input
+              type="text"
+              id="userName"
+              placeholder="Escribe su nombre aquí"
+              value="Nilka Momilona"
+            />
+          </div>
+          <div class="form-group">
+            <label for="birthdayMessage">Tu mensaje personal:</label>
+            <textarea id="birthdayMessage" rows="3">
+Que bonito es compartir contigo, eres única e increíble, vales demasiado, no quiero lo olvides. Deseo cumplas muchos años más, feliz cumpleaños mi preciosa :D</textarea
+            >
+          </div>
+          <div class="form-group">
+            <label for="photoSelect">Foto de la persona:</label>
+            <select id="photoSelect">
+              <option value="Nilka_2.jpeg">Foto 1</option>
+              <option value="Nilka_1.jpeg">Foto 2</option>
+              <option value="Nilka_3.jpeg">Foto 3</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="themeColor">Color del tema:</label>
+            <input type="color" id="themeColor" value="#ff6b9d" />
+          </div>
+          <button id="startBtn" class="magic-btn">
+            <i class="fas fa-wand-magic-sparkles"></i> ¡Comenzar la Magia!
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contenido Principal (oculto inicialmente) -->
+    <div class="main-content hidden">
+      <audio class="song" loop>
+        <source src="./music/Un Año Más Cumpleaños Feliz.mp3" />
+        Your browser isn't invited for super fun audio time.
+      </audio>
+
+      <!-- Botones de Control -->
+      <div class="controls">
+        <button id="musicToggle" class="control-btn">
+          <i class="fas fa-music"></i>
+        </button>
+        <button id="replayBtn" class="control-btn">
+          <i class="fas fa-redo"></i>
+        </button>
+        <button id="confettiBtn" class="control-btn">
+          <i class="fas fa-birthday-cake"></i>
+        </button>
+      </div>
+
+      <!-- Contenedor de Partículas -->
+      <div id="particles-js"></div>
+
+      <div class="container">
+        <!-- Sección 1: Saludo Mágico -->
+        <div class="section one">
+          <div class="sparkle"><i class="fas fa-sparkle"></i></div>
+          <h1 class="greeting">
+            Holaaaa <span id="name" class="highlight">Nilkaa</span>
+          </h1>
+          <p class="subtitle" id="greetingText">
+            Hoy el universo entero celebra tu existencia ✨
+          </p>
+          <div class="floating-hearts">
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-heart"></i>
+          </div>
+        </div>
+
+        <!-- Sección 2: Mensaje Especial -->
+        <div class="section two">
+          <div class="message-card">
+            <div class="card-header">
+              <i class="fas fa-envelope"></i>
+              <h2>Mensaje Especial Para Ti</h2>
+            </div>
+            <div class="card-body">
+              <p class="message-text" id="personalMessage">
+                Quiero desearte un feliz cumpleaños, los astros tuvieron la
+                brillante idea de alinearse para que el sol te iluminara en este
+                día, pienso y tengo seguridad al decir lo siguiente, eres un ser
+                mágico, único e increíble, deseo cumplas muchos años más, feliz
+                cumpleaños mi ser precioso :D
+              </p>
+              <div class="message-footer">
+                <span class="signature">Con todo mi cariño</span>
+                <button class="heart-btn">
+                  <i class="fas fa-heart"></i> Guardar en el corazón
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sección 3: Galería de Recuerdos -->
+        <div class="section three">
+          <h2><i class="fas fa-images"></i> Momentos Especiales</h2>
+          <div class="gallery">
+            <div class="photo-frame">
+              <img
+                src="./img/Nilka_3.jpeg"
+                alt="Recuerdo 1"
+                class="memory-photo"
+              />
+              <div class="photo-caption">¡Eres increíble!</div>
+            </div>
+            <div class="photo-frame">
+              <div class="add-photo">
+                <i class="fas fa-plus"></i>
+                <p>Añade más fotos</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sección 4: Sorpresa Interactiva -->
+        <div class="section four">
+          <h2><i class="fas fa-gift"></i> Abre tus Regalos</h2>
+          <div class="gifts-container">
+            <div class="gift-box" data-gift="wish">
+              <div class="gift-lid"></div>
+              <div class="gift-body">
+                <span>Deseo 1</span>
+              </div>
+            </div>
+            <div class="gift-box" data-gift="message">
+              <div class="gift-lid"></div>
+              <div class="gift-body">
+                <span>Mensaje</span>
+              </div>
+            </div>
+            <div class="gift-box" data-gift="secret">
+              <div class="gift-lid"></div>
+              <div class="gift-body">
+                <span>Sorpresa</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sección 5: Foto con Efectos -->
+        <div class="section five">
+          <div class="photo-display">
+            <div class="frame">
+              <img
+                src="./img/Nilka_1.jpeg"
+                alt="La persona especial"
+                class="main-photo"
+                id="mainPhoto"
+              />
+              <div class="photo-effects">
+                <i class="fas fa-star effect-star"></i>
+                <i class="fas fa-heart effect-heart"></i>
+                <i class="fas fa-sparkle effect-sparkle"></i>
+              </div>
+            </div>
+            <div class="wish">
+              <h3 class="wish-hbd">
+                ¡Feliz Cumpleaños! <span id="dynamicName">Mi momilona</span>
+              </h3>
+              <h5 id="wishText">
+                Que cada día de tu vida sea tan especial como tú
+              </h5>
+              <div class="age-counter">
+                <div class="age-number" id="ageNumber">22</div>
+                <div class="age-text">años de magia ✨</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sección 6: Globos Animados -->
+        <div class="section six">
+          <div class="balloons-container"></div>
+        </div>
+
+        <!-- Sección 7: Fuegos Artificiales -->
+        <div class="section seven">
+          <div class="fireworks"></div>
+        </div>
+
+        <!-- Sección 8: Mensaje Final -->
+        <div class="section eight">
+          <div class="final-message">
+            <h2>
+              <i class="fas fa-moon-stars"></i> Antes de que termine este día...
+            </h2>
+            <p class="final-text">
+              Quiero que sepas que mereces toda la felicidad del universo. Este
+              pequeño detalle es solo el comienzo de todo lo bueno que vendrá.
+            </p>
+            <div class="interactive-final">
+              <button class="magic-btn" id="lastWishBtn">
+                <i class="fas fa-star-and-crescent"></i> Pide un Deseo
+              </button>
+              <p class="hint">
+                Haz click en los regalos para descubrir sorpresas ocultas
+              </p>
+            </div>
+            <div class="social-share">
+              <p>Comparte la magia:</p>
+              <div class="share-icons">
+                <button class="share-btn">
+                  <i class="fab fa-whatsapp"></i>
+                </button>
+                <button class="share-btn">
+                  <i class="far fa-envelope"></i>
+                </button>
+                <button class="share-btn" id="captureBtn">
+                  <i class="fas fa-camera"></i> Capturar Momento
+                </button>
+              </div>
+            </div>
+            <p id="replay" class="replay-link">
+              <i class="fas fa-sync-alt"></i> Ver la magia nuevamente
+            </p>
+            <div class="signature-final">
+              <p>
+                Hecho con <i class="fas fa-heart pulse"></i> especialmente para
+                ti
+              </p>
+              <p class="secret-code">✨ La magia está en los detalles ✨</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal para Regalos -->
+    <div id="giftModal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div id="modal-body"></div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/TextPlugin.min.js"></script>
+
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <!-- SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- html2canvas para capturar -->
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+    <!-- Mi Script Mejorado -->
+    <script type="module" src="./script/main.js"></script>
+  </body>
+</html>
