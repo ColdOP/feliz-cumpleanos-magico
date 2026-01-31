@@ -61,3 +61,25 @@ Puedes cambiar los colores principales editando las variables CSS en `style/main
   --secondary-color: #6a5af9; /* Color secundario */
   --accent-color: #ffd166;    /* Color de acento */
 }
+
+
+## 🎨 Personalización Avanzada
+
+### Cambiar la Foto Principal
+1. Añade tus fotos a la carpeta `img/`
+2. Actualiza el select en el formulario en `index.html`
+3. Asegúrate de que la ruta sea correcta
+
+### Cambiar la Música
+1. Reemplaza el archivo en `music/`
+2. Mantén el mismo nombre o actualiza la ruta en `index.html`
+
+### Modificar Colores
+Puedes cambiar los colores principales editando las variables CSS en `style/main.css`:
+
+```css
+:root {
+  --primary-color: #ff6b9d;   /* Color principal */
+  --secondary-color: #6a5af9; /* Color secundario */
+  --accent-color: #ffd166;    /* Color de acento */
+}
